@@ -31,7 +31,7 @@ The mutation incidence, representing the number of independent mutational events
 
 ## **Structure-based prediction of site competitiveness**
 
-To predict antigenic escape sites based on spatial steric hindrance, we developed a custom Python script __./Script/immune_scan.py__. The algorithm quantifies the structural "competitiveness" of each viral residue, identifying surface sites where antibody binding would physically clash with the host receptor. For each viral residue, the algorithm centers a virtual sphere with a default radius of 25Å on its alpha-carbon (which can be adjusted by user). 
+To predict antigenic escape sites based on spatial steric hindrance, we developed a custom Python script __./Script/immune_scan.py__. The algorithm quantifies the structural "competitiveness" of each viral residue, identifying surface sites where antibody binding would physically clash with the host receptor. For each viral residue, the algorithm centers a virtual sphere with a default radius of 45Å on its alpha-carbon (which can be adjusted by user). 
 
 In the case of receptor binding, the virtual sphere is located on the outer surface of the residue, perpendicular to the normal. While in the case of ligand binding, the virtual sphere is centered on the alpha-carbon of each residue.  It then calculates a "clash number" by counting the total number of receptor atoms located within this sphere, effectively simulating the steric bulk an antibody would encounter. To account for the baseline physical availability of the residue to antibodies, this clash number is multiplied by the residue's solvent-accessibility surface area (SASA).
 
